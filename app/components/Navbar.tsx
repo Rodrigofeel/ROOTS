@@ -16,7 +16,7 @@ export default function Navbar() {
                 <div className="flex justify-between h-16">
                     <div className="flex items-center">
                         <Link href="/">
-                            <span className="force-bebas text-4xl sm:text-5xl text-[#5C5032] ml-5 font-extrabold">
+                            <span className="force-bebas sm:text-6xl text-[#5C5032] ml-5 font-extrabold">
                                 Roots
                             </span>
                         </Link>

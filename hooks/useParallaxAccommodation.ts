@@ -1,25 +1,3 @@
-// 'use client';
-
-// import { useScroll, useTransform } from "framer-motion";
-// import { useRef } from "react";
-
-// export default function useParallaxAcomodacao() {
-//     const ref = useRef<HTMLElement>(null);
-
-//     const { scrollYProgress } = useScroll({
-//         target: ref,
-//         offset: ["start start", "end end"]
-//     });
-
-//     const y1 = useTransform(scrollYProgress, [0.10, 0.90], [170, 1200]);
-//     const y2 = useTransform(y1, y => y - 500);
-//     const y3 = useTransform(y1, y => y - 1000);
-
-//     return { ref, y1, y2, y3 };
-// }
-
-
-
 'use client';
 
 import { useLayoutEffect, useRef } from 'react';
@@ -35,66 +13,73 @@ export default function useParallaxAccommodation() {
   const bed3 = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
-    // ✅ Garantir que todas comecem na mesma posição visual
-    const alignToBed1 = () => {
-      if (!bed1.current || !bed2.current || !bed3.current) return;
+    const containerEl = container.current;
+    const bed1El = bed1.current;
+    const bed2El = bed2.current;
+    const bed3El = bed3.current;
 
-      // Mede a posição *relativa ao viewport* de bed1
-      const y1 = bed1.current.getBoundingClientRect().top;
+    if (!containerEl || !bed1El || !bed2El || !bed3El) return;
 
-      // Calcula quanto cada uma precisa subir para ficar na mesma altura
-      const y2 = bed2.current.getBoundingClientRect().top;
-      const y3 = bed3.current.getBoundingClientRect().top;
+    let ctx: gsap.Context | undefined;
 
-      const offset2 = y1 - y2; // ex: -1000px → bed2 está 1000px abaixo → sobe 1000px
+    const init = () => {
+      gsap.set([bed1El, bed2El, bed3El], {
+        force3D: true,
+        willChange: 'transform',
+      });
+
+      const y1 = bed1El.getBoundingClientRect().top;
+      const y2 = bed2El.getBoundingClientRect().top;
+      const y3 = bed3El.getBoundingClientRect().top;
+
+      const offset2 = y1 - y2;
       const offset3 = y1 - y3;
 
-      // Aplica offset inicial (instantâneo, sem animação)
-      gsap.set(bed2.current, { y: offset2 });
-      gsap.set(bed3.current, { y: offset3 });
-      gsap.set(bed1.current, { y: 0 });
+      gsap.set(bed2El, { y: offset2 });
+      gsap.set(bed3El, { y: offset3 });
+      gsap.set(bed1El, { y: 0 });
+
+      ctx = gsap.context(() => {
+        const totalMove = window.innerHeight * 1.7;
+
+        const elements = [
+          { el: bed1El, startY: 0 },
+          { el: bed2El, startY: offset2 },
+          { el: bed3El, startY: offset3 },
+        ];
+
+        elements.forEach(({ el, startY }) => {
+          gsap.to(el, {
+            y: startY + totalMove,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: containerEl,
+              start: '+=400 center',
+              end: 'bottom +=650',
+              scrub: 1.5,
+              invalidateOnRefresh: true,
+            },
+          });
+        });
+      }, container);
     };
 
-    // Executa uma vez, antes da animação
-    alignToBed1();
-
-    const ctx = gsap.context(() => {
-      if (!container.current) return;
-
-      const layers = [
-        { el: bed1.current, speed: 1.0 },
-        { el: bed2.current, speed: 1.25 },
-        { el: bed3.current, speed: 1.5 },
-      ];
-
-      // Distância total de movimento (200vh)
-      const totalMove = window.innerHeight * 2;
-
-      // ✅ Animação: todas partem de y = offset_inicial, e vão para y = offset_inicial + movimento
-      layers.forEach(({ el, speed }) => {
-        if (!el) return;
-
-        // Pega o y inicial já aplicado
-        const startY = gsap.getProperty(el, 'y') as number || 0;
-
-        gsap.to(el, {
-          y: startY + totalMove * speed,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: container.current,
-            start: 'top top',
-            end: 'bottom bottom',
-            scrub: true,
-            // onUpdate: self => console.log(self.progress),
-          },
-        });
-      });
-    }, [container, bed1, bed2, bed3]);
+    const rafId = requestAnimationFrame(() => {
+      requestAnimationFrame(init);
+    });
 
     return () => {
-      // Volta tudo ao normal ao sair
-      gsap.set([bed1.current, bed2.current, bed3.current], { y: 0 });
-      ctx.revert();
+      cancelAnimationFrame(rafId);
+      ScrollTrigger.getAll().forEach(st => st.kill());
+      ctx?.revert();
+
+      const elements = [bed1El, bed2El, bed3El].filter(
+        (el): el is HTMLDivElement => el !== null
+      );
+
+      if (elements.length > 0) {
+        gsap.set(elements, { clearProps: 'all' });
+      }
     };
   }, []);
 
