@@ -38,7 +38,7 @@ export default function Footer() {
           </span>
         </div>
 
-        <div className="h-[45vh] border-t-[2px] border-[#93804f] flex items-end justify-end">
+        <div className="h-[45vh] border-t-2 border-[#93804f] flex items-end justify-end">
           <h1 className="text-[#93804f] force-bebas text-[280px] leading-none translate-y-[55px]">ROOTS</h1>
         </div>
 
