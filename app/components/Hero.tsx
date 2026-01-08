@@ -20,10 +20,11 @@ export default function Hero() {
                 </div>
             </div>
 
-            <div   className=" text-[#fff7ef] relative flex flex-col items-center justify-center h-full mt-64 z-10 px-4 text-center">
+            <div   className=" text-[#fff7ef] relative flex flex-col items-center justify-center h-full mt-64
+            2xl:mt-125 z-10 px-4 text-center">
                 <h1 className="text-5xl font-bold force-inter mb-4">Bem-vindo à Roots</h1>
                 <p className="text-lg mb-8 font-semibold">Chalés e natureza em perfeita harmonia.</p>
-                <button className="cursor-pointer bg-[#93804f]  text- px-6 py-3 rounded-xl hover:bg-[#5C5032] transition font-semibold">Reservar</button>
+                <button className="cursor-pointer bg-[#93804f] px-6 py-3 rounded-xl hover:bg-[#5C5032] transition font-semibold">Reservar</button>
             </div>
         </section>
     )

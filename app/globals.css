@@ -31,24 +31,24 @@ html, body {
 
 @layer utilities {
   .accommodation-imgbed {
-    @apply relative left-25 bottom-[-90] w-[35%] h-80 rounded-xl overflow-hidden z-20 will-change-transform;
+    @apply relative left-25 bottom-[-90] w-[35%] xl:w-[35%] 2xl:h-110 h-80 rounded-xl overflow-hidden z-20 will-change-transform;
   }
 
   .accommodation-img {
-    @apply relative h-[500px] w-full overflow-hidden;
+    @apply relative h-[500px] 2xl:h-[700px] w-full overflow-hidden;
   }
 
   .cards {
-    @apply flex flex-col items-start text-left p-12 rounded-lg
+    @apply flex flex-col items-start text-left p-12 2xl:p-30 rounded-lg
          bg-white shadow-sm border-l-4 border-[#93804f]
          transition-all duration-300 hover:shadow-lg hover:translate-x-2 -mt-18;
   }
 
   .cards-h2 {
-    @apply text-2xl font-bold mb-14 text-[#5C5032];
+    @apply text-2xl 2xl:text-4xl font-bold mb-14 text-[#5C5032];
   }
 
   .cards-p {
-    @apply text-base leading-relaxed max-w-prose mb-4 font-semibold text-gray-700;
+    @apply text-base 2xl:text-2xl leading-relaxed max-w-prose mb-4 font-semibold text-gray-700;
   }
 }

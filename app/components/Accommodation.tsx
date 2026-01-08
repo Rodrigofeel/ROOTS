@@ -23,7 +23,7 @@ export default function Accommodation() {
 
     return(
        <section ref={container} className="relative w-full h-[300vh] bg-[#fff7ef]">
-        <h1 className="text-5xl force-lora text-center py-16 text-[#93804f] ">Hospede-se em harmonia com a natureza</h1>
+        <h1 className="text-5xl 2xl:text-7xl force-lora text-center py-16 text-[#93804f] ">Hospede-se em harmonia com a natureza</h1>
         <div>
 
             {/* acomodação 1 */}

@@ -26,20 +26,20 @@ export default function Footer() {
         )}
 
         <div>
-          <p className="text-[#ffffff85] text-sm absolute left-4 bottom-4">© 2025 RODRIGOFEL.</p>
+          <p className="text-[#ffffff85] text-sm 2xl:text-lg absolute left-4 bottom-4">© 2025 RODRIGOFEL.</p>
         </div>
 
-        <div className="translate-y-[-120px] translate-x-[-15px] space-x-4">
+        <div className="translate-y-[-120px] 2xl:translate-y-[-230px] translate-x-[-15px] space-x-4">
           <span
             onClick={copiarEmail}
-            className="cursor-pointer text-[#fff7ef] hover:text-[#93804f] force-bebas text-6xl"
+            className="cursor-pointer text-[#fff7ef] hover:text-[#93804f] force-bebas text-6xl 2xl:text-8xl"
           >
             ro.feel009@gmail.com
           </span>
         </div>
 
         <div className="h-[45vh] border-t-2 border-[#93804f] flex items-end justify-end">
-          <h1 className="text-[#93804f] force-bebas text-[280px] leading-none translate-y-[55px]">ROOTS</h1>
+          <h1 className="text-[#93804f] force-bebas md:text-[280px] 2xl:text-[380px] leading-none translate-y-[55px] 2xl:translate-y-[75px]">ROOTS</h1>
         </div>
 
       </div>

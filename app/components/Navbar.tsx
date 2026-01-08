@@ -10,11 +10,11 @@ export default function Navbar() {
 
     return (
         <nav className={`fixed w-full rounded-b-3xl bg-[#fff7ef] shadow-[0_0px_10px_0px_rgba(0,0,0,0.3)] transition-transform duration-300 z-70 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
-            <div className="max-w-7xl mx-auto px-5 py-4 sm:py-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-5 py-4 sm:py-4 sm:px-6 2xl:px-8">
 
 
                 <div className="flex justify-between h-16">
-                    <div className="flex items-center">
+                    <div className="flex items-center 2xl:-ml-80">
                         <Link href="/">
                             <span className="force-bebas sm:text-6xl text-[#5C5032] ml-5 font-extrabold">
                                 Roots
@@ -23,7 +23,7 @@ export default function Navbar() {
                     </div>
 
 
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-8 md:-mr-5 2xl:-mr-80">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}

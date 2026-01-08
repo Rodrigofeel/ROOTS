@@ -40,7 +40,10 @@ export default function useParallaxAccommodation() {
       gsap.set(bed1El, { y: 0 });
 
       ctx = gsap.context(() => {
-        const totalMove = window.innerHeight * 1.7;
+        const isLargeScreen = window.innerWidth >= 1536;
+        const totalMove = isLargeScreen
+          ? window.innerHeight * 2.5
+          : window.innerHeight * 1.7;
 
         const elements = [
           { el: bed1El, startY: 0 },

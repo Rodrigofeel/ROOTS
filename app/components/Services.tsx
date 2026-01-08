@@ -9,12 +9,12 @@ export default function Services() {
 
     return(
         <section
-         className="bg-[#fff7ef] relative px-3 py-50">
+         className="bg-[#fff7ef] relative px-3 py-50 2xl:-mt-200">
 
-            <h1 className="text-center md:text-5xl force-lora text-[#93804f] mb-12 -mt-18">Tudo o Que Preparamos Para Você</h1>
+            <h1 className="text-center md:text-5xl 2xl:text-7xl force-lora text-[#93804f] mb-12 -mt-18">Tudo o Que Preparamos Para Você</h1>
 
 
-            <div className="grid  md:grid-cols-3 gap-8 h-[60vh] mt-36">
+            <div className="grid  md:grid-cols-3 gap-8 h-[60vh] 2xl:h-[70vh] mt-36">
 
                  {/* card 1 */}
                  <div className="cards">
