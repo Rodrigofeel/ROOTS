@@ -28,18 +28,18 @@ export default function Navbar() {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`force-inter text-[#5C5032] hover:text-[#423923] mr-10 px-3 py-2 rounded-md text-base font-bold transition-colors ${pathname === link.href ? "text-blue-600" : ""}`}
+                                className={`force-inter text-[#5C5032] hover:text-[#423923] mr-10 px-3 py-2 rounded-md text-base font-bold transition-colors ${pathname === link.href ? "" : ""}`}
                             >
                                 {link.label}
                             </Link>
                         ))}
                     </div>
 
-                     {/* mobile */}
+                     {/*mobile*/}
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsMobileMenu(!isMobileMenu)}
-                            className="inline-flex items-center justify-center p-2 rounded-md text-[#3a3a3a] hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+                            className="inline-flex items-center justify-center p-2 rounded-md text-[#3a3a3a] hover:text-gray-900 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset"
                         >
                             {isMobileMenu ? (
                                 <BiX className="text-3xl"/>
@@ -56,7 +56,7 @@ export default function Navbar() {
                                     key={link.href}
                                     href={link.href}
                                     onClick={() => setIsMobileMenu(false)}
-                                    className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === link.href ? "text-blue-600 " : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"}`}
+                                    className={`block px-3 py-2 rounded-md text-base font-medium ${pathname === link.href ? "text-[#93804f] " : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"}`}
                                 >
                                     {link.label}
                                 </Link>

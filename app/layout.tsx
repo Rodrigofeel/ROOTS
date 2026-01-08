@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Saira_Condensed, Inter, Lora } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={` ${bebas.variable} ${saira.variable} ${inter.variable} ${lora.variable} antialiased`}
       >
+        <Navbar />
         {children}
       </body>
     </html>

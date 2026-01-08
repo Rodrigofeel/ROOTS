@@ -29,7 +29,6 @@ export default function useNavbarHook() {
   }, []);
 
   const navLinks = [
-    { href: '/', label: '' },
     { href: '/accommodations', label: 'Acomodações' },
     { href: '/services', label: 'Serviços' },
     { href: '/about', label: 'Quem somos' },
