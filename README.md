@@ -16,10 +16,9 @@ Este site tem como inspiração hospedagens em meio a natureza, o projeto é 100
 
 ## Funcionalidades
 
-- Temas dark e light
-- Preview em tempo real
-- Modo tela cheia
-- Multiplataforma
+- Navbar
+- Seções interativas
+- Resposividade em monitores
 
 ## Documentação de cores
 
@@ -49,7 +48,6 @@ git clone https://github.com/Rodrigofeel/ROOTS.git
 ## Referência
 
  - [Referência de sites (awwwards)](https://www.awwwards.com/)
- - [Criação do readme (readme.so)](https://readme.so/pt)
  - [Imagens adquiridas (pexels)](https://www.pexels.com/pt-br/)
   - [illustrations e icons (iconscout)](https://iconscout.com/)
   - [Referência de efeitos](https://blog.olivierlarose.com/)
