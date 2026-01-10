@@ -13,16 +13,6 @@ Este site tem como inspiração hospedagens em meio a natureza, o projeto é 100
 
 **Front-end:** React, Next.js, Typescript, Tailwind CSS, CSS Modules
 
-### IDE
-
-Visual Studio Code
-
-### Ferramenta auxiliar 
-
-Copilot
-
-Claude
-
 
 ## Funcionalidades
 
@@ -68,4 +58,3 @@ git clone https://github.com/Rodrigofeel/ROOTS.git
 ## Aprendizados
 
 Esse projeto me ajudou no aprendizado de arquitura monolítico client-side, lógica de programação (Interatividade, scroll, cálculos, estado) e desenvolvimento de design básico.
-

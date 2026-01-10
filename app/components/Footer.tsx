@@ -5,7 +5,7 @@ export default function Footer() {
   const [mostrarNotificacao, setMostrarNotificacao] = useState(false);
 
   const copiarEmail = () => {
-    navigator.clipboard.writeText('ro.feel009@gmail.com');
+    navigator.clipboard.writeText('rodrigo-fellix@hotmail.com');
     setMostrarNotificacao(true);
     setTimeout(() => setMostrarNotificacao(false), 3000);
   };
@@ -34,7 +34,7 @@ export default function Footer() {
             onClick={copiarEmail}
             className="cursor-pointer text-[#fff7ef] hover:text-[#93804f] force-bebas text-6xl 2xl:text-8xl"
           >
-            ro.feel009@gmail.com
+            rodrigo-fellix@hotmail.com
           </span>
         </div>
 
